@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,19 +10,19 @@
 <table width="500" cellpadding="0" cellspacing="0" border="1" class="type11">
 		<form action="writego" method="post">
 			<tr>
-				<td> юл╦╖ </td>
+				<td> Л²╢К╕└ </td>
 				<td> <input type="text" name="writer" size = "50" required> </td>
 			</tr>
 			<tr>
-				<td> а╕╦Я </td>
+				<td> Л═°К╙╘ </td>
 				<td> <input type="text" name="title" size = "50" required> </td>
 			</tr>
 			<tr>
-				<td> Ё╩©К </td>
+				<td> К┌╢Л ╘ </td>
 				<td> <textarea name="contents" rows="15" required></textarea> <img src="${pageContext.request.contextPath }${url }" style="width:150px"> </td>
 			</tr>
 			<tr >
-				<td colspan="2"> <input type="submit" value="ют╥б"> &nbsp;&nbsp; <a href="noticeBoard.do">╦Я╥о╨╦╠Б</a> &nbsp;&nbsp; <a href="notice_write.do">╢ы╫ц ╬В╥н╣Его╠Б</a></td>
+				<td colspan="2"> <input type="submit" value="Л·┘К═╔"> &nbsp;&nbsp; <a href="noticeBoard.do">К╙╘К║²КЁ╢Й╦╟</a> &nbsp;&nbsp; <a href="notice_write.do">К▀╓Л▀° Л≈┘К║°К⌠°М∙≤Й╦╟</a></td>
 			</tr>
 		</form>
 	</table>

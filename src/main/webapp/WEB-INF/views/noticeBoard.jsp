@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -12,7 +12,7 @@
 <link href="resources/default.css?" rel="stylesheet" type="text/css" media="all" />
 <link href="resources/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
-<title>°Ô½ÃÆÇ ¸®½ºÆ®</title>
+<title>ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸</title>
 </head>
 <body>
 
@@ -21,13 +21,13 @@
 
 	<div class="container">
 		<table class="table table-hover">
-			<h1>°øÁö»çÇ×</h1>
+			<h1>ê³µì§€ì‚¬í•­</h1>
 			<tr>
-				<th bgcolor="skyblue">¹øÈ£</th>
-				<th bgcolor="skyblue">Á¦¸ñ</th>
-				<th bgcolor="skyblue">ÀÛ¼ºÀÚ</th>
-				<th bgcolor="skyblue">ÀÛ¼º³¯Â¥</th>
-				<th bgcolor="skyblue">Á¶È¸¼ö</th>
+				<th bgcolor="skyblue">ë²ˆí˜¸</th>
+				<th bgcolor="skyblue">ì œëª©</th>
+				<th bgcolor="skyblue">ìž‘ì„±ìž</th>
+				<th bgcolor="skyblue">ìž‘ì„±ë‚ ì§œ</th>
+				<th bgcolor="skyblue">ì¡°íšŒìˆ˜</th>
 			</tr>
 			<c:forEach items="${list}" var="info">
 				<tr>
@@ -36,12 +36,12 @@
 					<td>${info.writer}</td>
 					<td>${info.write_date}</td>
 					<td>${info.hit}</td>
-					<%-- <td><a href="reply_view?no=${info.no}" class="btn btn-default" role="button">¼öÁ¤ÇÏ±â</a></td>
-					<td><a href="delete?no=${info.no}" class="btn btn-default" role="button">»èÁ¦ÇÏ±â</a></td> --%>
+					<%-- <td><a href="reply_view?no=${info.no}" class="btn btn-default" role="button">ìˆ˜ì •í•˜ê¸°</a></td>
+					<td><a href="delete?no=${info.no}" class="btn btn-default" role="button">ì‚­ì œí•˜ê¸°</a></td> --%>
 				</tr>
 			</c:forEach>
 		</table>
-		<a href="notice_write" class="btn btn-default" role="button">±Û¾²±â</a>
+		<a href="notice_write" class="btn btn-default" role="button">ê¸€ì“°ê¸°</a>
 	</div>
 	<br/>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
