@@ -71,7 +71,7 @@
 	</form>
 	<a class="add_button" href="writeForm4" style="margin-right: 30px">글작성</a>
 
-
+asd
 
 </body>
 </html>
