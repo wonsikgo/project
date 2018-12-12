@@ -1,0 +1,84 @@
+@charset "UTF-8";
+a {
+	text-decoration: none;
+}
+#search,select {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    color: #006fff;
+    border: 1px solid #006fff;
+    border-radius: 3px;
+}
+
+
+.add_button {
+    border: 1px solid #006fff;
+
+	right: 10px;
+	top: 10px;
+	width: 100px;
+	padding: 10px 10px;
+	text-align: center;
+	font-weight: bold;
+	background-color: white;
+	color: #006fff;
+	float: right;
+   	 margin-right: 3px;
+}
+#board_sel .sel {
+    border: 1px solid #006fff;
+
+	right: 10px;
+	top: 10px;
+	width: 100px;
+	padding: 10px 10px;
+	text-align: center;
+	font-weight: bold;
+	background-color: white;
+	color: #006fff;
+   	 margin-right: 3px;
+}
+#boardcss_list_add_button_table .add_button a {
+	color: #ffffff;
+}
+
+#boardcss_list_add_button_table .boardcss_list_add_button ul {
+	width: 100%;
+	overflow: hidden;
+	height: 10px;
+}
+
+.boardcss_list_table {
+	width: 100%;
+}
+.boardcss_list_table h1 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.list_table {
+	width: 100%;
+}
+
+.list_table caption {
+	display: none;
+}
+
+.list_table thead td {
+	text-align: center;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #BDBDBD;
+	padding: 8px 0;
+	background: #ececec;
+}
+.list_table thead tr {
+font-weight: 900;
+}
+.list_table tbody td {
+	text-align: center;
+	border-bottom: 1px solid #BDBDBD;
+	padding: 5px 0;
+	background-color: white;
+}

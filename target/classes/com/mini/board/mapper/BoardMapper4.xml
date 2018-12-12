@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.board.dao.BoardDao4">
+
+
+<select id="listDao" resultType="com.mini.board.dto.BoardDto4">
+SELECT * FROM FREE_BOARD4 ORDER BY  BGROUP DESC , no ASC
+</select>
+
+<insert id="writeDao">
+	INSERT INTO FREE_BOARD4 
+	 VALUES(FREE_BOARD4_SEQ.NEXTVAL,#{title},#{contents},#{writer},sysdate,0,FREE_BOARD4_SEQ.CURRVAL,0,0)
+</insert>
+
+<select id="viewDao" resultType="com.mini.board.dto.BoardDto4">
+	SELECT * FROM FREE_BOARD4 WHERE NO = #{no}
+</select>
+
+<select id="modifyView" parameterType="BoardDto4">
+	SELECT * FROM FREE_BOARD4 WHERE NO = #{no} 
+</select>
+
+<update id="updateDao" parameterType="BoardDto4">
+	UPDATE FREE_BOARD4 SET TITLE=#{title}, CONTENTS=#{contents} WHERE NO = #{no}
+</update>
+
+<update id="updateHit">
+	update FREE_BOARD4 set hit = hit + 1 where no = #{no}
+</update>
+
+ <delete id="deleteDao">
+	DELETE FROM FREE_BOARD4 WHERE NO = #{no}
+</delete>
+
+
+<insert id="replywrite">
+	INSERT INTO FREE_BOARD4 VALUES(FREE_BOARD4_SEQ.NEXTVAL,#{title},#{contents},#{writer},sysdate,0, #{bGroup},#{bStep}+1,#{bIndent}+1)
+</insert>
+
+
+<update id="replyShape">
+	UPDATE FREE_BOARD4 SET bStep = bStep + 1 where bGroup = #{bGroup} and bStep > #{bStep}
+</update>
+
+
+<select id="searchDao" parameterType="BoardDto4" resultType="BoardDto4">
+select * from free_board4 
+		where
+		<choose>
+			<when test="checkoption == 'all'">
+				contents like '%'||#{keyword}||'%'
+				or title like '%'||#{keyword}||'%'
+			</when>
+			
+			<when test="checkoption == 'title'">
+				title like '%'||#{keyword}||'%'
+			</when>
+			<when test="checkoption == 'con'">
+				contents like '%'||#{keyword}||'%'
+			</when>
+<!-- 			
+			<otherwise>
+				${checkoption} like '%'||#{keyword}||'%'
+			</otherwise> -->
+		</choose>
+		order by no desc
+
+</select>
+
+</mapper>

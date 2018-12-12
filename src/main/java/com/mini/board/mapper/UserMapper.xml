@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.board.dao.UserDao">
+	
+	<select id="userList" resultType="com.mini.board.dto.UserDto">
+		SELECT * FROM USER_INFO ORDER BY ID DESC
+	</select>
+	
+ 	<insert id="signup">
+	 	INSERT INTO USER_INFO (id,password,name,phoneNum,email)
+	 	VALUES (#{id}, #{password}, #{name}, #{phoneNum}, #{email})
+	 	</insert>
+		
+	<select id="viewInfo" resultType="com.mini.board.dto.UserDto">
+		SELECT * FROM USER_INFO WHERE ID = #{PARAM1}
+		</select>
+		
+	<update id="modify">
+		UPDATE USER_INFO SET PASSWORD = #{password}, PHONENUM = #{phoneNum}, EMAIL = #{email} WHERE ID = #{id}
+		</update>
+		
+	<delete id="delete">
+		DELETE FROM USER_INFO WHERE ID = #{PARAM1}
+		</delete>
+	
+</mapper>

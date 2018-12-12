@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.board.dao.BoardDao2">
+	
+	<select id="freeBoard2List" resultType="com.mini.board.dto.BoardDto2">
+		SELECT * FROM FREE_BOARD2 ORDER BY NO DESC
+	</select>
+	
+ 	<insert id="write">
+	 	INSERT INTO FREE_BOARD2 (NO,title,contents,writer,WRITE_DATE,HIT,FILENAME,FILEPATH)
+	 	VALUES (free_board2_seq.NEXTVAL, #{title}, #{contents}, #{writer}, sysdate, 0, #{fileName}, #{filePath})
+	 	</insert>
+	 	
+	<update id="hitUp">
+		UPDATE FREE_BOARD2 SET HIT = HIT+1 WHERE NO = #{PARAM1}
+		</update>
+		
+	<select id="view" resultType="com.mini.board.dto.BoardDto2">
+		SELECT * FROM FREE_BOARD2 WHERE NO = #{PARAM1}
+		</select>
+		
+	<update id="modify">
+		UPDATE FREE_BOARD2 SET TITLE = #{title}, CONTENTS = #{contents} WHERE NO = #{no}
+		</update>
+		
+	<delete id="delete">
+		DELETE FROM FREE_BOARD2 WHERE NO = #{PARAM1}
+		</delete>
+		
+	<select id="getSeq" resultType="int">
+		SELECT MAX(NO) FROM FREE_BOARD2
+	</select>
+	
+</mapper>

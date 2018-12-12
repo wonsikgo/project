@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mini.board.dao.BoardDao1">
+
+	<select id="getAllList" resultType="BoardDto1">
+		select * from FREE_BOARD1
+		order by no desc
+	</select>
+
+	<insert id="insertContents" parameterType="BoardDto1">
+		insert into FREE_BOARD1(no,title, contents, writer, write_date, hit)
+		values
+		(FREE_BOARD1_SEQ.NEXTVAL,#{title},#{contents},#{writer},SYSDATE,0)
+	</insert>
+
+	<delete id="deleteContents" parameterType="int">
+		delete from FREE_BOARD1
+		where no=#{no}
+
+	</delete>
+
+	<select id="getno" resultType="BoardDto1">
+		select * from FREE_BOARD1
+		where no=#{no}
+	</select>
+
+	<update id="updateContents" parameterType="BoardDto1">
+		update FREE_BOARD1 set title=#{title}, contents=#{contents} where no=#{no}
+	</update>
+
+	<update id="updateCount" parameterType="int">
+		update FREE_BOARD1 set hit=hit+1 where no=#{no}
+	</update>
+
+	<select id="freeBoardSearch" parameterType="BoardDto1"
+		resultType="BoardDto1">
+
+		select * from FREE_BOARD1
+		where
+		<choose>
+			<when test="searchOption == 'all'">
+				contents like '%'||#{keyword}||'%'
+				or title like '%'||#{keyword}||'%'
+			</when>
+			<otherwise>
+				${searchOption} like '%'||#{keyword}||'%'
+			</otherwise>
+		</choose>
+		order by no desc
+
+
+
+
+	</select>
+
+
+
+
+</mapper>
