@@ -13,6 +13,6 @@
 <body>
 <jsp:include page="include1.jsp"/>
 <div id="banner"/>
-
+test1
 </body>
 </html>
